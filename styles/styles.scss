@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// GENERIC
+
+$brown: #ae7b5b;
+$navy-blue: #212529;
+$bg-1: #f8fbf6;
+$bg-2: #d7dbd6;
+
+%padding{
+    padding: 5vw;
+}
+
+%flex-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+*{
+    font-family: 'Roboto Slab', serif;;
+}
+
+p{
+    font-family: sans-serif;
+}
+
+.color-brown{
+    color: $brown;
+}
+
+.button{
+    background-color: $brown;
+    color: white;
+    border: none;
+    padding: 10px 20px ;
+}
+
+
+.bar{
+    border-bottom: 2px solid $brown;
+    width: 100px;
+    margin: 2rem 0;
+}
+
+.inline{
+    display: inline;
+}
+
+// NAVBAR
+.logo-texto{
+    width: 6rem;
+}
+
+.navbar-margin-left{
+    margin-left: 10vw;
+}
+
+.navbar-margin-right{
+    margin-right: 10vw;
+}
+
+.bg-navy-blue{
+    background-color: $navy-blue;
+}
+
+
+// FRONT PAGE
+.front-page{
+    background-image: url(../images/foto1.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+    height: 85vh;
+    display: flex; 
+    padding: 3rem 10rem;
+
+    &__logo{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 50%;
+        
+        img{
+            width: 10rem;
+            height: 10rem;
+        }
+    }
+
+    &__text{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 50%;
+
+    }
+
+
+}
+
+
+
+//SECTION 1
+.section1{
+    display: flex;
+    padding: 5vw 5vw;
+    justify-content: center;
+    background-color: $bg-1;
+
+    &__welcome{
+        width: 35%;
+        margin-top: 1.5rem;
+    }
+
+    &__schedule{
+        width: 50%;
+        display: flex;
+
+        &__photo{
+            margin: 0 1.5rem;
+        }
+
+        &__info{
+            margin-top: 1.5rem;
+        }
+
+
+    }
+}
+
+
+
+// SECTION 2
+.gallery{
+    @extend %flex-column;
+    @extend %padding;
+    
+    &__photos{
+        margin: 2rem;
+
+        div{
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            
+            img{
+                margin: 9px 0;
+                width: clamp(200px, 25vw, 400px);
+                height: clamp(200px, 25vw, 400px); 
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+
+// SECTION 3
+.section3{
+    background-image: url(../images/logo2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    background-color: $bg-2;
+    @extend %padding;
+    @extend %flex-column;
+
+    &__text{
+        margin: 3rem;
+    }
+}
+
+
+// SECTION 4
+.section4{
+    .photo1{
+        width: clamp(300px, 70vw, 600px);
+        position: relative;
+        left: 50%;
+        top: 5rem;
+        transform: translateX(-50%);
+    }
+
+    .info{
+        position: relative;
+        top: 60px;
+        left: 15vw;
+        background-color: rgba(0, 0, 0, 0.75);
+        width: clamp(300px, 70vw, 550px);
+        border: 1px solid white;
+        outline: 10px solid rgba(0, 0, 0, 0.75);
+        padding: 4rem 1rem;
+    }
+
+    &__pic{
+        padding: 6px 12px;
+        border: 1px solid black;
+        position: relative;
+        top: -265px;
+        left: 64%;
+        display: inline-block;
+
+        .photo2{
+            width: 250px;
+    
+        }
+    }
+
+}
+
+// SECTION 5
+
+.section5{
+    background-color: $bg-1;
+    @extend %padding;
+    margin-top: -150px;
+
+    &__container{
+        &__photo{
+            width: 500px;
+            height: 300px; 
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            margin: 1rem;
+            img{
+                object-fit: cover;
+                display: block;
+                width: clamp(300px, 30vw, 450px)
+            }
+        }
+
+    }
+}
+
+// SECTION 6
+
+.section6{
+    padding: 5vw 0;
+    @extend %flex-column;
+    background-color: $bg-2;
+
+    &__container{
+
+        &__barber{
+            background-color: white;
+            padding: 3vw; 
+            width: clamp(300px, 28vw, 400px);
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0 1rem;
+            flex-wrap: nowrap;
+
+            img{
+                height: 100%;
+                object-fit: cover;
+
+            }
+        }
+    }
+}
+
+// SECTION 7
+
+.section7{
+    @extend %padding;
+    background-image: url(../images/foto15.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__testimonials{
+        background-color: transparent;
+        border: 1px solid white;
+        text-align: center;
+        padding: 3rem 1rem;
+        width: 650px;
+
+
+        .quote{
+            width: 50px;
+        }
+    }
+}
+
+//FOOTER
+footer{
+    background-color: black;
+    @extend %flex-column;
+    @extend %padding;
+
+    .barber-logo{
+        width: 100px;
+    }
+    .logos{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-top: 1rem;
+        .logo{
+            filter: invert(100%);
+            width: 20px;
+            
+        }
+
+    }
+}
+
+// MEDIA-QUERIES
+
+@media (max-width: 1100px){
+    .section1{
+        flex-direction: column;
+        &__welcome{
+            width: 100%;
+        }
+
+        &__schedule{
+            margin-top: 2rem;
+            width: 100%;
+        }
+    }
+
+    .section4{
+        padding-bottom: 350px;
+        .info{
+            position: relative;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        &__pic{
+            position: relative;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .section6{
+    
+        &__container{
+            flex-direction: column;
+    
+            &__barber{
+                width: clamp(300px, 60vw, 800px);
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 990px){
+    .gallery{
+
+        &__photos{
+
+            div{
+                
+                img{
+
+                    width: clamp(300px, 32vw, 400px);
+                    height: clamp(300px, 32vw, 400px); 
+
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 765px){
+    .gallery{
+
+        &__photos{
+
+            div{
+                
+                img{
+
+                    width: clamp(300px, 80vw, 500px);
+                    height: clamp(300px, 80vw, 500px); 
+
+                }
+            }
+        }
+    }
+} 
+
+@media (max-width: 576px){
+    .section1__schedule{
+        flex-direction: column;
+    }
+
+    .gallery{
+
+        &__photos{
+
+            div{
+                
+                img{
+
+                    width: clamp(300px, 80vw, 500px);
+                    height: clamp(300px, 80vw, 500px); 
+
+                }
+            }
+        }
+    }
+} 
